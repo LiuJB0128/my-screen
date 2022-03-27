@@ -1,5 +1,5 @@
 {
-  "name": "big-screen-demo-01",
+  "name": "my-screen",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",

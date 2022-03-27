@@ -5,9 +5,23 @@
   <meta name="viewport"
     content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
   <title>大屏可视化项目</title>
+  <script>
+    const clientWidth = document.documentElement.clientWidth
+    const clientHeight = document.documentElement.clientHeight
+    const pageWidth = clientWidth / clientHeight > 16 / 9 ? clientHeight * (16 / 9) : clientWidth
+    const pageHeight = pageWidth / (16 / 9)
+    const string = `<style>html{
+      font-size: ${pageWidth / 100}px}</style>`
+    document.write(string)
+  </script>
 </head>
 <body>
 <div id="root"></div>
+<script>
+  root.style.width = pageWidth + 'px'
+  root.style.height = pageHeight + 'px'
+  root.style.marginTop = (clientHeight - pageHeight) / 2 + 'px'
+</script>
 <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
