@@ -16,6 +16,7 @@
     display: grid;
     grid-template:
       "box1 box2 box3" 930fr / 486fr 705fr 486fr;
+    grid-column-gap: px(70);
 
     > .section1 {
       grid-area: box1;
