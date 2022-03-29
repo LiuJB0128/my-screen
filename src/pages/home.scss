@@ -21,7 +21,7 @@
     grid-column-gap: px(70);
 
     > section {
-      border: 1px solid red;
+      //border: 1px solid red;
     }
 
     > .section1 {
@@ -36,96 +36,115 @@
       grid-area: box3;
     }
 
-    .社会状况 {
-      height: px(32);
+    .chart1 {
+      display: grid;
+      grid-template:
+      "tag" px(32)
+      "content" px(296);
+      height: px(328);
+      border: 1px solid green;
 
-      .num {
-        float: left;
-        background: #4e6b8d;
-        width: px(32);
-        text-align: center;
-        line-height: px(32);
-        font-size: px(16);
-      }
-
-      h2 {
-        line-height: px(32);
-        padding-left: px(45);
-      }
-    }
-
-    .content {
-      height: px(296);
-      display: flex;
-      flex-direction: row;
-
-      .data {
+      .tag {
+        //height: px(32);
+        //border: 1px solid green;
         position: relative;
-        width: 100%;
-        flex: 1;
-        margin-top: px(25);
-        margin-bottom: px(50);
-        border: 2px solid #457482;
-        border-bottom-right-radius: 30px;
-        .square1{
-          height: px(5);
-          width: px(5);
-          background: #ffda67;
+        grid-area: tag;
+
+        .num {
           position: absolute;
-          top: 0;
           left: 0;
-        }
-        .square2{
-          height: px(5);
-          width: px(5);
-          background: #ffda67;
-          position: absolute;
-          top: 0;
-          right: 0;
-        }
-        .square3{
-          height: px(5);
-          width: px(5);
-          background: #ffda67;
-          position: absolute;
-          bottom: 0;
-          left: 0;
+          background: #4e6b8d;
+          width: px(32);
+          text-align: center;
+          line-height: px(32);
+          font-size: px(16);
         }
 
-        .text{
-          height: px(75);
-          display: grid;
-          grid-template:
+        h2 {
+          line-height: px(32);
+          padding-left: px(45);
+        }
+      }
+
+      .content {
+        grid-area: content;
+        border: 1px solid red;
+        //height: 100%;
+        display: flex;
+        flex-direction: row;
+
+        .data {
+          position: relative;
+          width: 100%;
+          flex: 1;
+          margin-top: px(25);
+          margin-bottom: px(50);
+          border: 2px solid #457482;
+          border-bottom-right-radius: 30px;
+
+          .square1 {
+            height: px(5);
+            width: px(5);
+            background: #ffda67;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+
+          .square2 {
+            height: px(5);
+            width: px(5);
+            background: #ffda67;
+            position: absolute;
+            top: 0;
+            right: 0;
+          }
+
+          .square3 {
+            height: px(5);
+            width: px(5);
+            background: #ffda67;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+          }
+
+          .text {
+            height: px(75);
+            display: grid;
+            grid-template:
             "a a a" 30fr
             "b c c" 35fr / 243fr 1fr 100fr;
-          > .title {
-            line-height: px(35);
-            padding-left: px(20);
-            font-size: px(12);
-            color: #92b1bb;
-            grid-area: a;
-          }
 
-          > .number {
-            line-height: px(20);
-            font-size: px(20);
-            padding-left: px(20);
-            color: #92b1bb;
-            grid-area: b;
-          }
+            > .title {
+              line-height: px(35);
+              padding-left: px(20);
+              font-size: px(12);
+              color: #92b1bb;
+              grid-area: a;
+            }
 
-          > .percentage {
-            text-align: center;
-            line-height: px(10);
-            font-size: px(10);
-            color: #92b1bb;
-            grid-area: c;
+            > .number {
+              line-height: px(20);
+              font-size: px(20);
+              padding-left: px(20);
+              color: #92b1bb;
+              grid-area: b;
+            }
+
+            > .percentage {
+              text-align: center;
+              line-height: px(10);
+              font-size: px(10);
+              color: #92b1bb;
+              grid-area: c;
+            }
           }
         }
-      }
 
-      .chart {
-        flex: 1;
+        .chart {
+          flex: 1;
+        }
       }
     }
   }

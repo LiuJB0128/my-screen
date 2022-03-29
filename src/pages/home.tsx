@@ -82,32 +82,34 @@ export const Home = () => {
       <header style={{backgroundImage: `url(${image}`}}/>
       <main>
         <section className="section1">
-          <div className="社会状况">
-            <div className="num">1</div>
-            <h2>Social Condition 社会状况</h2>
-          </div>
-          <div className="content">
-            <div className="data">
-              <div className="square1"/>
-              <div className="square2"/>
-              <div className="square3"/>
-              <div className="text">
-                <div className="title">铁路货物运输量(万吨)</div>
-                <div className="number">410244</div>
-                <div className="percentage">+5.6%</div>
-              </div>
-              <div className="text">
-                <div className="title">银行中长期贷款(亿元)</div>
-                <div className="number">85498752</div>
-                <div className="percentage">+3.4%</div>
-              </div>
-              <div className="text">
-                <div className="title">耗电量(万千瓦时)</div>
-                <div className="number">6582144</div>
-                <div className="percentage">+9.7%</div>
-              </div>
+          <div className="chart1">
+            <div className="tag">
+              <div className="num">1</div>
+              <h2>Social Condition 社会状况</h2>
             </div>
-            <div ref={divRef} className="chart"/>
+            <div className="content">
+              <div className="data">
+                <div className="square1"/>
+                <div className="square2"/>
+                <div className="square3"/>
+                <div className="text">
+                  <div className="title">铁路货物运输量(万吨)</div>
+                  <div className="number">410244</div>
+                  <div className="percentage">+5.6%</div>
+                </div>
+                <div className="text">
+                  <div className="title">银行中长期贷款(亿元)</div>
+                  <div className="number">85498752</div>
+                  <div className="percentage">+3.4%</div>
+                </div>
+                <div className="text">
+                  <div className="title">耗电量(万千瓦时)</div>
+                  <div className="number">6582144</div>
+                  <div className="percentage">+9.7%</div>
+                </div>
+              </div>
+              <div ref={divRef} className="chart"/>
+            </div>
           </div>
         </section>
         <section className="section2"/>
