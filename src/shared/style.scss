@@ -18,11 +18,11 @@ code {
 body {
   font-family: $font-hei;
   font-size: 16px;
+  background: #101521;
 }
 
 #root{
   margin: 0 auto;
-  background: lightgreen;
   display: flex;
   flex-direction: column;
 }
@@ -30,4 +30,8 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+h1,h2,h3,h4,h5{
+  font-size: px(16);
+  background: #2a3c55;
 }
