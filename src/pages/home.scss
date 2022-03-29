@@ -74,6 +74,9 @@
         flex-direction: row;
 
         .data {
+          display: flex;
+          justify-content:center;
+          flex-direction: column;
           position: relative;
           width: 100%;
           flex: 1;
@@ -83,8 +86,8 @@
           border-bottom-right-radius: 30px;
 
           .square1 {
-            height: px(5);
-            width: px(5);
+            height: px(7);
+            width: px(7);
             background: #ffda67;
             position: absolute;
             top: 0;
@@ -92,8 +95,8 @@
           }
 
           .square2 {
-            height: px(5);
-            width: px(5);
+            height: px(7);
+            width: px(7);
             background: #ffda67;
             position: absolute;
             top: 0;
@@ -101,8 +104,8 @@
           }
 
           .square3 {
-            height: px(5);
-            width: px(5);
+            height: px(7);
+            width: px(7);
             background: #ffda67;
             position: absolute;
             bottom: 0;
@@ -119,7 +122,7 @@
             > .title {
               line-height: px(35);
               padding-left: px(20);
-              font-size: px(12);
+              font-size: px(14);
               color: #92b1bb;
               grid-area: a;
             }
@@ -135,7 +138,7 @@
             > .percentage {
               text-align: center;
               line-height: px(10);
-              font-size: px(10);
+              font-size: px(16);
               color: #92b1bb;
               grid-area: c;
             }
