@@ -29,29 +29,61 @@ export const Chart2 = () => {
       },
       legend: {},
       grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
+        left: '5%',
+        right: '20%',
+        top: '15%',
+        bottom: '8%',
         containLabel: true
       },
       xAxis: {
+        show: false,
         type: 'value',
         boundaryGap: [0, 0.01],
         axisPointer: {
-          show: false,
+          show: true,
         }
       },
       yAxis: {
         type: 'category',
-        data: ['福建', '安徽', '浙江', '江苏', '上海']
+        data: ['福建', '安徽', '浙江', '江苏', '上海'],
+        axisLine: {
+          show: false,
+        },
+        axisTick: {
+          show: false
+        },
+        axisLabel: {
+          textStyle: {
+            color: "#fff",
+            fontSize: px(12)
+          }
+        }
       },
       series: [
         {
           type: 'bar',
-          data: [186.46, 197.58, 208.74, 219.67, 265.58],
+          data: [86.46, 125.58, 178.74, 219.67, 295.58],
           itemStyle: {
-            borderRadius: [0, 20, 20, 0]
-          }
+            normal: {
+              borderRadius: [0, 20, 20, 0],
+              color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+                offset: 0,
+                color: "#419cf8" // 0% 处的颜色
+              }, {
+                offset: 1,
+                color: "#11cdd6" // 100% 处的颜色
+              }], false),
+              label: {
+                show: true,
+                position: 'right',
+                textStyle: {
+                  color: '#fff',
+                  fontSize: px(12)
+                }
+              }
+            }
+          },
+          barWidth: px(14)
         }
       ]
     });
