@@ -4,10 +4,6 @@ import {px} from '../shared/px';
 
 export const Chart2 = () => {
   const divRef = useRef(null);
-  const data = [];
-  for (let i = 0; i < 5; ++i) {
-    data.push(Math.round(Math.random() * 200));
-  }
   useEffect(() => {
     console.log(divRef.current);
     const myChart = echarts.init(divRef.current);
@@ -18,7 +14,7 @@ export const Chart2 = () => {
         top: px(20),
         textStyle: {
           fontSize: px(16),
-          color: '#fff'
+          color: '#aed3dd'
         },
       },
       tooltip: {
@@ -54,7 +50,7 @@ export const Chart2 = () => {
         },
         axisLabel: {
           textStyle: {
-            color: "#fff",
+            color: "#7a94a0",
             fontSize: px(12)
           }
         }
@@ -77,7 +73,7 @@ export const Chart2 = () => {
                 show: true,
                 position: 'right',
                 textStyle: {
-                  color: '#fff',
+                  color: '#7a94a0',
                   fontSize: px(12)
                 }
               }

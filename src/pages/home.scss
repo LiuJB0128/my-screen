@@ -39,14 +39,11 @@
     .chart1 {
       display: grid;
       grid-template:
-      "tag" px(32)
-      "content" px(296);
-      height: px(328);
-      border: 1px solid green;
+      "tag" px(30)
+      "content" px(290);
+      height: px(320);
 
       .tag {
-        //height: px(32);
-        //border: 1px solid green;
         position: relative;
         grid-area: tag;
 
@@ -56,20 +53,18 @@
           background: #4e6b8d;
           width: px(32);
           text-align: center;
-          line-height: px(32);
+          line-height: px(30);
           font-size: px(16);
         }
 
         h2 {
-          line-height: px(32);
+          line-height: px(30);
           padding-left: px(45);
         }
       }
 
       .content {
         grid-area: content;
-        border: 1px solid red;
-        //height: 100%;
         display: flex;
         flex-direction: row;
 

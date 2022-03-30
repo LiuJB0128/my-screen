@@ -15,7 +15,7 @@ export const Chart1 = () => {
         top: px(20),
         textStyle: {
           fontSize: px(16),
-          color: '#fff'
+          color: '#aed3dd'
         },
         subtextStyle: {
           fontSize: px(16),
