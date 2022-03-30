@@ -4,6 +4,7 @@ import image from '../images/header.png';
 import {Chart1} from '../components/chart-1';
 import {Chart2} from '../components/chart-2';
 import {Chart3} from '../components/chart-3';
+import {Chart4} from '../components/chart-4';
 
 export const Home = () => {
   return (
@@ -16,7 +17,9 @@ export const Home = () => {
           <Chart3/>
         </section>
         <section className="section2"/>
-        <section className="section3"/>
+        <section className="section3">
+          <Chart4/>
+        </section>
       </main>
     </div>
   );
