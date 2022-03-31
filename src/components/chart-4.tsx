@@ -8,19 +8,57 @@ export const Chart4 = () => {
     console.log(divRef.current);
     const myChart = echarts.init(divRef.current);
     myChart.setOption({
-      tooltip: {
-        formatter: '{a} <br/>{b} : {c}%'
-      },
       series: [
         {
-          name: 'Pressure',
           type: 'gauge',
-          progress: {
-            show: true
+          axisLine: {
+            lineStyle: {
+              width: px(10),
+              color: [
+                [0.3, '#fe6b93'],
+                [0.7, '#12c4fd'],
+                [1, '#9851eb']
+              ]
+            }
+          },
+          pointer: {
+            width: px(3),
+            itemStyle: {
+              color: 'auto'
+            }
+          },
+          axisTick: {
+            distance: px(-9),
+            length: px(3),
+            lineStyle: {
+              color: '#191927',
+              width: px(1)
+            }
+          },
+          splitLine: {
+            distance: px(-10),
+            length: px(10),
+            lineStyle: {
+              color: '#191927',
+              width: px(1)
+            }
+          },
+          axisLabel: {
+            color: 'auto',
+            distance: px(15),
+            fontSize: px(10)
           },
           detail: {
             valueAnimation: true,
-            formatter: '{value}'
+            formatter: '{value} %',
+            fontSize: px(16),
+            color: 'auto',
+            offsetCenter: [0, '65%']
+          },
+          title: { // 标题位置
+            offsetCenter: [0, '40a%'],
+            color: '#c6c7ca',
+            fontSize: px(16)
           },
           data: [
             {
@@ -31,6 +69,20 @@ export const Chart4 = () => {
         }
       ]
     });
+    setInterval(function () {
+      myChart.setOption({
+        series: [
+          {
+            data: [
+              {
+                value: +(Math.random() * 100).toFixed(2),
+                name: '可用率',
+              }
+            ]
+          }
+        ]
+      });
+    }, 2000);
   }, []);
   return (
     <div className="chart1">
