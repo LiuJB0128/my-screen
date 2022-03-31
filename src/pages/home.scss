@@ -19,10 +19,6 @@
       "box1 box2 box3" 930fr / 486fr 705fr 486fr;
     grid-column-gap: px(70);
 
-    > section {
-      //border: 1px solid red;
-    }
-
     > .section1 {
       grid-area: box1;
     }
@@ -152,7 +148,6 @@
       justify-content: center;
       border: 2px solid #457482;
       height: px(60);
-
       position: relative;
 
       h1 {
@@ -202,6 +197,27 @@
         position: absolute;
         bottom: 0;
         right: 0;
+      }
+    }
+
+    .chart3 {
+      border: 2px solid #ffda67;
+      height: px(840);
+      margin-top: px(25);
+      margin-bottom: px(30);
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        box-shadow:
+                12px 0 0 -10px #5893a6,
+                0 12px 0 -10px #5893a6,
+                -12px 0 0 -10px #5893a6,
+                0 -12px 0 -10px #5893a6,;
       }
     }
   }
