@@ -69,7 +69,7 @@
 
         .data {
           display: flex;
-          justify-content:center;
+          justify-content: center;
           flex-direction: column;
           position: relative;
           width: 100%;
@@ -142,6 +142,66 @@
         .chart {
           flex: 1;
         }
+      }
+    }
+
+    .chart2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #457482;
+      height: px(60);
+
+      position: relative;
+
+      h1 {
+        background: #101521;
+        font-size: px(18);
+        letter-spacing: px(7);
+        color: #b2cfd7;
+      }
+
+      h2 {
+        background: #101521;
+        font-size: px(8);
+        color: #b2cfd7;
+      }
+
+      .square1 {
+        height: px(7);
+        width: px(7);
+        background: #ffda67;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .square2 {
+        height: px(7);
+        width: px(7);
+        background: #ffda67;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      .square3 {
+        height: px(7);
+        width: px(7);
+        background: #ffda67;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+
+      .square4 {
+        height: px(7);
+        width: px(7);
+        background: #ffda67;
+        position: absolute;
+        bottom: 0;
+        right: 0;
       }
     }
   }
