@@ -5,7 +5,6 @@ import {px} from '../shared/px';
 export const Chart2 = () => {
   const divRef = useRef(null);
   useEffect(() => {
-    console.log(divRef.current);
     const myChart = echarts.init(divRef.current);
     myChart.setOption({
       title: {
