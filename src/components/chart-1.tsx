@@ -8,28 +8,41 @@ export const Chart1 = () => {
     console.log(divRef.current);
     const myChart = echarts.init(divRef.current);
     myChart.setOption({
-      title: {
+      tooltip: {
+        trigger: 'item'
+      },
+      title: [{
         text: '国内生产总值',
-        subtext: '50.58 亿',
         left: 'center',
-        top: px(20),
+        top: "12%",
         textStyle: {
           fontSize: px(16),
           color: '#aed3dd'
+        }
+      },{
+        text: '50.58亿',
+        subtext: '+10.6%',
+        left: 'center',
+        top: '45%',
+        textStyle: {
+          fontSize: px(18),
+          color: '#aed3dd'
         },
         subtextStyle: {
-          fontSize: px(16),
+          fontSize: px(14),
           color: '#afcfdc'
-        },
-        padding: px(16)
-      },
+        }
+      }],
       legend: {
-        bottom: px(30),
+        bottom: "15%",
         left: 'center',
         textStyle: {
           color: '#90acb9',
           fontSize: px(12)
-        }
+        },
+        itemWidth: px(10),
+        itemHeight: px(10),
+        itemGap: px(10),
       },
       series: [
         {
@@ -63,13 +76,14 @@ export const Chart1 = () => {
           labelLine: {
             show: true,
             length: px(7),
-            length2: px(7)
+            length2: px(7),
           },
           label: {
-            color: '#fff',
+            color: 'auto',
             fontSize: px(12),
             overflow: 'break',
-            position: 'outside'
+            position: 'outside',
+            formatter: '{d} %'
           }
         }
       ]

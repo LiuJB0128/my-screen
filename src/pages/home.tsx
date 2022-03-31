@@ -5,6 +5,7 @@ import {Chart1} from '../components/chart-1';
 import {Chart2} from '../components/chart-2';
 import {Chart3} from '../components/chart-3';
 import {Chart4} from '../components/chart-4';
+import {Chart5} from '../components/chart-5';
 
 export const Home = () => {
   return (
@@ -19,6 +20,7 @@ export const Home = () => {
         <section className="section2"/>
         <section className="section3">
           <Chart4/>
+          <Chart5/>
         </section>
       </main>
     </div>
