@@ -51,22 +51,45 @@ export const Chart1 = () => {
               value: 50,
               name: '第一产业',
               itemStyle: {
-                color: '#0dd1d4'
+                normal: {
+                  color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                    offset: 0,
+                    color: '#12ccd8' // 0% 处的颜色
+                  }, {
+                    offset: 1,
+                    color: '#409cf8' // 100% 处的颜色
+                  }], false),
+                }
               }
             },
             {
               value: 20,
               name: '第二产业',
               itemStyle: {
-                color: '#7a64fd'
-
+                normal: {
+                  color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                    offset: 0,
+                    color: '#e388f2' // 0% 处的颜色
+                  }, {
+                    offset: 1,
+                    color: '#7161fe' // 100% 处的颜色
+                  }], false),
+                }
               }
             },
             {
               value: 30,
               name: '第三产业',
               itemStyle: {
-                color: '#ff77a3'
+                normal: {
+                  color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                    offset: 0,
+                    color: '#ff7aca' // 0% 处的颜色
+                  }, {
+                    offset: 1,
+                    color: '#ff4277' // 100% 处的颜色
+                  }], false),
+                }
               }
             }
           ],
@@ -78,7 +101,7 @@ export const Chart1 = () => {
             length2: px(7),
           },
           label: {
-            color: 'auto',
+            color: '#afcfdc',
             fontSize: px(12),
             overflow: 'break',
             position: 'outside',

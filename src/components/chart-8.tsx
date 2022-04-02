@@ -41,7 +41,7 @@ export const Chart8 = () => {
     });
   }, []);
   return (
-    <div className="chart3">
+    <div className="chart8">
       <div ref={divRef} className="chart"/>
     </div>
   );

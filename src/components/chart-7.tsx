@@ -2,7 +2,7 @@ import React from "react"
 
 export const Chart7 = () => {
   return (
-    <div className="chart2">
+    <div className="chart7">
       <div className="square1"/>
       <div className="square2"/>
       <div className="square3"/>
