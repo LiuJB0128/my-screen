@@ -1,13 +1,14 @@
 import React, {useEffect, useRef} from 'react';
 import * as echarts from 'echarts';
-import east from '../geo/data.json';
+import china from '../geo/china.json';
 import {px} from '../shared/px';
 
 export const Chart8 = () => {
   const divRef = useRef(null);
-  echarts.registerMap('CN', east);
   useEffect(() => {
     const myChart = echarts.init(divRef.current);
+    // @ts-ignore
+    echarts.registerMap('CN', china);
     myChart.setOption({
       xAxis: {show: false},
       yAxis: {show: false},
@@ -15,22 +16,27 @@ export const Chart8 = () => {
         {
           type: 'map',
           mapType: 'CN', // 自定义扩展图表类型
-          data: [
-            {name: '江苏省', value: 1},
-          ],
-          label: {show: false, color: 'white'},
+          roam: false,
+          aspectScale: 1,
+          zoom: 1.2,
+          selectedMode: false,
+          label: {
+            show: true,
+            color: '#1cd8f5',
+            fontSize: px(18),
+          },
           itemStyle: {
-            areaColor: '#010D3D',
-
-            borderColor: '#01A7F7',
+            areaColor: '#101d2c',
+            borderColor: '#01c7e3',
             emphasis: {
-              label: {color: 'white'},
-              areaColor: '#5470C6',
+              label: {color: '#1cd8f5'},
+              areaColor: '#0b2035',
+            },
+            select: {
+              disabled: false
             },
           }
-        },
-
-
+        }
       ]
     });
   }, []);
@@ -38,5 +44,5 @@ export const Chart8 = () => {
     <div className="chart3">
       <div ref={divRef} className="chart"/>
     </div>
-  )
+  );
 };

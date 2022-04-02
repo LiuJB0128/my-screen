@@ -206,6 +206,10 @@
       margin-top: px(25);
       margin-bottom: px(30);
       position: relative;
+      display: flex;
+      flex-direction: column;
+      background: #1c3b4b;
+
       &::before {
         content: '';
         position: absolute;
@@ -213,11 +217,14 @@
         right: 0;
         bottom: 0;
         top: 0;
-        box-shadow:
-                12px 0 0 -10px #5893a6,
-                0 12px 0 -10px #5893a6,
-                -12px 0 0 -10px #5893a6,
-                0 -12px 0 -10px #5893a6,;
+        box-shadow: 12px 0 0 -10px #5893a6,
+        0 12px 0 -10px #5893a6,
+        -12px 0 0 -10px #5893a6,
+        0 -12px 0 -10px #5893a6;
+      }
+
+      .chart {
+        flex: 1;
       }
     }
   }
