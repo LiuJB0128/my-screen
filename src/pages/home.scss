@@ -211,6 +211,7 @@
       background: #1c3b4b;
 
       &::before {
+        pointer-events: none;
         content: '';
         position: absolute;
         left: 0;
