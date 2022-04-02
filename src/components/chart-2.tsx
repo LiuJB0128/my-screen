@@ -4,9 +4,28 @@ import {px} from '../shared/px';
 
 export const Chart2 = () => {
   const divRef = useRef(null);
+  const myChart = useRef(null);
+  const data = [
+    {name: '福建', num: 86.46},
+    {name: '安徽', num: 125.58},
+    {name: '浙江', num: 178.74},
+    {name: '江苏', num: 219.67},
+    {name: '上海', num: 295.58}
+  ];
   useEffect(() => {
-    const myChart = echarts.init(divRef.current);
-    myChart.setOption({
+    setInterval(() => {
+      const newData = [
+        {name: '福建', num: (Math.random() * 200).toFixed(2)},
+        {name: '安徽', num: (Math.random() * 200).toFixed(2)},
+        {name: '浙江', num: (Math.random() * 200).toFixed(2)},
+        {name: '江苏', num: (Math.random() * 200).toFixed(2)},
+        {name: '上海', num: (Math.random() * 200).toFixed(2)},
+        ];
+        x(newData);
+    }, 2000);
+  }, []);
+  const x = (data) => {
+    myChart.current.setOption({
       title: {
         text: '固定资产投资完成情况',
         left: 'center',
@@ -40,7 +59,7 @@ export const Chart2 = () => {
       },
       yAxis: {
         type: 'category',
-        data: ['福建', '安徽', '浙江', '江苏', '上海'],
+        data: data.map(i => i.name),
         axisLine: {
           show: false,
         },
@@ -49,7 +68,7 @@ export const Chart2 = () => {
         },
         axisLabel: {
           textStyle: {
-            color: "#7a94a0",
+            color: '#7a94a0',
             fontSize: px(12)
           }
         }
@@ -57,16 +76,16 @@ export const Chart2 = () => {
       series: [
         {
           type: 'bar',
-          data: [86.46, 125.58, 178.74, 219.67, 295.58],
+          data: data.map(i => i.num),
           itemStyle: {
             normal: {
               borderRadius: [0, 20, 20, 0],
               color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
                 offset: 0,
-                color: "#419cf8" // 0% 处的颜色
+                color: '#419cf8' // 0% 处的颜色
               }, {
                 offset: 1,
-                color: "#11cdd6" // 100% 处的颜色
+                color: '#11cdd6' // 100% 处的颜色
               }], false),
               label: {
                 show: true,
@@ -82,6 +101,10 @@ export const Chart2 = () => {
         }
       ]
     });
+  };
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    x(data);
   }, []);
   return (
     <div className="chart1">

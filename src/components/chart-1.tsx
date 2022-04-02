@@ -110,6 +110,61 @@ export const Chart1 = () => {
         }
       ]
     });
+    setInterval(function () {
+      myChart.setOption({
+        series: [
+          {
+            data: [
+              {
+                value: +(Math.random() * 100).toFixed(2),
+                name: '第一工厂',
+                itemStyle: {
+                  normal: {
+                    color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                      offset: 0,
+                      color: '#12ccd8' // 0% 处的颜色
+                    }, {
+                      offset: 1,
+                      color: '#409cf8' // 100% 处的颜色
+                    }], false),
+                  }
+                }
+              },
+              {
+                value: +(Math.random() * 100).toFixed(2),
+                name: '第二工厂',
+                itemStyle: {
+                  normal: {
+                    color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                      offset: 0,
+                      color: '#e388f2' // 0% 处的颜色
+                    }, {
+                      offset: 1,
+                      color: '#7161fe' // 100% 处的颜色
+                    }], false),
+                  }
+                }
+              },
+              {
+                value: +(Math.random() * 100).toFixed(2),
+                name: '第三工厂',
+                itemStyle: {
+                  normal: {
+                    color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
+                      offset: 0,
+                      color: '#ff7aca' // 0% 处的颜色
+                    }, {
+                      offset: 1,
+                      color: '#ff4277' // 100% 处的颜色
+                    }], false),
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      });
+    }, 2000);
   }, []);
   return (
     <div className="chart1">
