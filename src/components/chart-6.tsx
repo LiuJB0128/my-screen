@@ -152,7 +152,7 @@ export const Chart6 = () => {
     <div className="chart1">
       <div className="tag">
         <div className="num">6</div>
-        <h2>Grid Reliability 电网可靠性</h2>
+        <h2>Electricity Sales And Line Loss 售电及线损</h2>
       </div>
 
       <div className="content">
