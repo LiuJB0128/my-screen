@@ -72,8 +72,8 @@
           flex: 1;
           margin-top: px(25);
           margin-bottom: px(50);
-          border: 2px solid #457482;
-          border-bottom-right-radius: 30px;
+          border: px(2) solid #457482;
+          border-bottom-right-radius: px(30);
 
           .square1 {
             height: px(7);
@@ -146,7 +146,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      border: 2px solid #457482;
+      border: px(2) solid #457482;
       height: px(60);
       position: relative;
 
@@ -201,7 +201,7 @@
     }
 
     .chart8 {
-      border: 2px solid #ffda67;
+      border: px(2) solid #ffda67;
       height: px(840);
       margin-top: px(25);
       margin-bottom: px(30);
@@ -218,10 +218,10 @@
         right: 0;
         bottom: 0;
         top: 0;
-        box-shadow: 12px 0 0 -10px #5893a6,
-        0 12px 0 -10px #5893a6,
-        -12px 0 0 -10px #5893a6,
-        0 -12px 0 -10px #5893a6;
+        box-shadow: px(12) 0 0 px(-10) #5893a6,
+        0 px(12) 0 px(-10) #5893a6,
+        px(-12) 0 0 px(-10) #5893a6,
+        0 px(-12) 0 px(-10) #5893a6;
       }
 
       .chart {
