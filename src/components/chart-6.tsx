@@ -104,6 +104,8 @@ export const Chart6 = () => {
           data: [7, 4.3, 3.8, 4.1, 2.6, 2.3, 5.7, 2.3, 5.8, 6.8, 6, 3.6],
           type: 'line',
           name: '网损率',
+          symbol: 'circle',
+          symbolSize:px(5),
           lineStyle: {
             color: '#855661'
           },
@@ -127,6 +129,8 @@ export const Chart6 = () => {
           yAxisIndex: 1,
           type: 'line',
           name: '增长率',
+          symbol: 'circle',
+          symbolSize:px(5),
           lineStyle: {
             color: '#2d5d8b'
           },

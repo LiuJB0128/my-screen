@@ -4,9 +4,23 @@ import {px} from '../shared/px';
 
 export const Chart5 = () => {
   const divRef = useRef(null);
-  useEffect(() => {
-    const myChart = echarts.init(divRef.current);
-    myChart.setOption({
+  const myChart = useRef(null);
+  const Data = [
+    {month: '1', num1: '6', num2: '0'},
+    {month: '2', num1: '4', num2: '2'},
+    {month: '3', num1: '5', num2: '0'},
+    {month: '4', num1: '0', num2: '4'},
+    {month: '5', num1: '7', num2: '4'},
+    {month: '6', num1: '3', num2: '6'},
+    {month: '7', num1: '3', num2: '3'},
+    {month: '8', num1: '6.5', num2: '0'},
+    {month: '9', num1: '2', num2: '2'},
+    {month: '10', num1: '0', num2: '0'},
+    {month: '11', num1: '2', num2: '2'},
+    {month: '12', num1: '0', num2: '0'},
+  ];
+  const x = (data) => {
+    myChart.current.setOption({
       title: {
         text: '设备及机组跳闸',
         left: 'center',
@@ -26,12 +40,12 @@ export const Chart5 = () => {
           fontSize: px(12)
         },
         right: 0,
-        top: "18%",
+        top: '18%',
       },
       xAxis: [
         {
           type: 'category',
-          data: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+          data: data.map(i => i.month),
           axisPointer: {
             show: true,
           },
@@ -89,7 +103,7 @@ export const Chart5 = () => {
         {
           name: '机组跳闸',
           type: 'bar',
-          data: [6, 4, 5, 0, 7, 3, 3, 6.5, 2, 0, 2, 0],
+          data: data.map(i => i.num1),
           itemStyle: {
             normal: {
               color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
@@ -109,7 +123,7 @@ export const Chart5 = () => {
         {
           name: '设备调整',
           type: 'bar',
-          data: [0, 2, 0, 4, 4, 6, 3, 0, 2, 0, 2, 0],
+          data: data.map(i => i.num2),
           itemStyle: {
             normal: {
               color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [{
@@ -126,8 +140,20 @@ export const Chart5 = () => {
           },
           barWidth: px(7)
         },
-      ]
+      ],
     });
+  };
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    x(Data);
+    setInterval(() => {
+      const newData = [...Data];
+      for (let i = 0; i <= 11; i++) {
+        newData[i].num1 = (Math.round(Math.random() * 10) - 2).toString();
+        newData[i].num2 = (Math.round(Math.random() * 10) - 2).toString();
+      }
+      x(newData);
+    }, 2000);
   }, []);
   return (
     <div className="chart1">

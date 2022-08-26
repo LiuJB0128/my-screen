@@ -1,6 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import * as echarts from 'echarts';
-import { px } from '../shared/px';
+import {px} from '../shared/px';
 
 export const Chart1 = () => {
   const divRef = useRef(null);
@@ -13,16 +13,16 @@ export const Chart1 = () => {
       title: [{
         text: '国内生产总值',
         left: 'center',
-        top: "12%",
+        top: '12%',
         textStyle: {
           fontSize: px(16),
           color: '#aed3dd'
         }
-      },{
+      }, {
         text: '50.58亿',
         subtext: '+10.6%',
         left: 'center',
-        top: '45%',
+        top: 'center',
         textStyle: {
           fontSize: px(18),
           color: '#aed3dd'
@@ -30,10 +30,11 @@ export const Chart1 = () => {
         subtextStyle: {
           fontSize: px(14),
           color: '#afcfdc'
-        }
+        },
+        itemGap: 0
       }],
       legend: {
-        bottom: "15%",
+        bottom: '15%',
         left: 'center',
         textStyle: {
           color: '#90acb9',
@@ -196,5 +197,5 @@ export const Chart1 = () => {
         <div ref={divRef} className="chart"/>
       </div>
     </div>
-  )
-}
+  );
+};
