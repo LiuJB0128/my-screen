@@ -117,7 +117,7 @@ export const Chart1 = () => {
           {
             data: [
               {
-                value: +(Math.random() * 100).toFixed(2),
+                value: +(Math.random() * 100 + 1).toFixed(2),
                 name: '第一工厂',
                 itemStyle: {
                   normal: {
@@ -132,7 +132,7 @@ export const Chart1 = () => {
                 }
               },
               {
-                value: +(Math.random() * 100).toFixed(2),
+                value: +(Math.random() * 100 + 1).toFixed(2),
                 name: '第二工厂',
                 itemStyle: {
                   normal: {
@@ -147,7 +147,7 @@ export const Chart1 = () => {
                 }
               },
               {
-                value: +(Math.random() * 100).toFixed(2),
+                value: +(Math.random() * 100 + 1).toFixed(2),
                 name: '第三工厂',
                 itemStyle: {
                   normal: {

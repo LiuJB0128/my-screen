@@ -19,7 +19,7 @@ export const Chart5 = () => {
     {month: '11', num1: '2', num2: '2'},
     {month: '12', num1: '0', num2: '0'},
   ];
-  const x = (data) => {
+  const Echart = (data) => {
     myChart.current.setOption({
       title: {
         text: '设备及机组跳闸',
@@ -145,14 +145,14 @@ export const Chart5 = () => {
   };
   useEffect(() => {
     myChart.current = echarts.init(divRef.current);
-    x(Data);
+    Echart(Data);
     setInterval(() => {
       const newData = [...Data];
       for (let i = 0; i <= 11; i++) {
-        newData[i].num1 = (Math.round(Math.random() * 10) - 2).toString();
-        newData[i].num2 = (Math.round(Math.random() * 10) - 2).toString();
+        newData[i].num1 = (Math.round(Math.random() * 7) + 1).toString();
+        newData[i].num2 = (Math.round(Math.random() * 7) + 1).toString();
       }
-      x(newData);
+      Echart(newData);
     }, 2000);
   }, []);
   return (

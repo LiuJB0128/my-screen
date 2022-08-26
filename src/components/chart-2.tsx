@@ -5,26 +5,14 @@ import {px} from '../shared/px';
 export const Chart2 = () => {
   const divRef = useRef(null);
   const myChart = useRef(null);
-  const data = [
+  const Data = [
     {name: '福建', num: 86.46},
     {name: '安徽', num: 125.58},
     {name: '浙江', num: 178.74},
     {name: '江苏', num: 219.67},
     {name: '上海', num: 295.58}
   ];
-  useEffect(() => {
-    setInterval(() => {
-      const newData = [
-        {name: '福建', num: (Math.random() * 200).toFixed(2)},
-        {name: '安徽', num: (Math.random() * 200).toFixed(2)},
-        {name: '浙江', num: (Math.random() * 200).toFixed(2)},
-        {name: '江苏', num: (Math.random() * 200).toFixed(2)},
-        {name: '上海', num: (Math.random() * 200).toFixed(2)},
-        ];
-        x(newData);
-    }, 2000);
-  }, []);
-  const x = (data) => {
+  const Echart = (data) => {
     myChart.current.setOption({
       title: {
         text: '固定资产投资完成情况',
@@ -104,7 +92,14 @@ export const Chart2 = () => {
   };
   useEffect(() => {
     myChart.current = echarts.init(divRef.current);
-    x(data);
+    Echart(Data);
+    setInterval(() => {
+      const newData = [...Data];
+      for (let i = 0; i < 5; i++) {
+        newData[i].num = Number((Math.random() * 200 + 1).toFixed(2));
+      }
+      Echart(newData);
+    }, 2000);
   }, []);
   return (
     <div className="chart1">

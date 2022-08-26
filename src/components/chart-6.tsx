@@ -4,9 +4,23 @@ import {px} from '../shared/px';
 
 export const Chart6 = () => {
   const divRef = useRef(null);
-  useEffect(() => {
-    const myChart = echarts.init(divRef.current);
-    myChart.setOption({
+  const myChart = useRef(null);
+  const Data = [
+    {month: '1', rate1: 7, rate2: -1.9},
+    {month: '2', rate1: 4.3, rate2: -2.6},
+    {month: '3', rate1: 3.8, rate2: -3.8},
+    {month: '4', rate1: 4.1, rate2: -5.5},
+    {month: '5', rate1: 2.6, rate2: -4},
+    {month: '6', rate1: 2.3, rate2: -3.6},
+    {month: '7', rate1: 5.7, rate2: -4.2},
+    {month: '8', rate1: 2.3, rate2: -4.4},
+    {month: '9', rate1: 5.8, rate2: -3.8},
+    {month: '10', rate1: 6.8, rate2: -2.2},
+    {month: '11', rate1: 6, rate2: -2},
+    {month: '12', rate1: 3.6, rate2: -3},
+  ];
+  const Echart = (data) => {
+    myChart.current.setOption({
       title: {
         text: '全网线损率',
         left: 'center',
@@ -19,7 +33,7 @@ export const Chart6 = () => {
       xAxis: {
         type: 'category',
         boundaryGap: false,
-        data: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+        data: data.map(i => i.month),
         axisPointer: {
           show: true,
         },
@@ -101,11 +115,11 @@ export const Chart6 = () => {
       ],
       series: [
         {
-          data: [7, 4.3, 3.8, 4.1, 2.6, 2.3, 5.7, 2.3, 5.8, 6.8, 6, 3.6],
+          data: data.map(i => i.rate1),
           type: 'line',
           name: '网损率',
           symbol: 'circle',
-          symbolSize:px(5),
+          symbolSize: px(5),
           lineStyle: {
             color: '#855661'
           },
@@ -125,12 +139,12 @@ export const Chart6 = () => {
           },
         },
         {
-          data: [-1.9, -2.6, -3.8, -5.5, -4, -3.6, -4.2, -4.4, -2.8, -2.2, -2, -3],
+          data: data.map(i => i.rate2),
           yAxisIndex: 1,
           type: 'line',
           name: '增长率',
           symbol: 'circle',
-          symbolSize:px(5),
+          symbolSize: px(5),
           lineStyle: {
             color: '#2d5d8b'
           },
@@ -151,6 +165,18 @@ export const Chart6 = () => {
         },
       ]
     });
+  };
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    Echart(Data);
+    setInterval(() => {
+      const newData = [...Data];
+      for (let i = 0; i < 12; i++) {
+        newData[i].rate1 = Number((Math.round(Math.random() * 6) + 1));
+        newData[i].rate2 = Number((Math.round(Math.random() * -6) - 1));
+      }
+      Echart(newData);
+    }, 2000);
   }, []);
   return (
     <div className="chart1">
